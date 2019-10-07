@@ -15,6 +15,52 @@
     width: 100%;
     padding: @margin-xs @margin-sm;
     position: absolute;
-    background: @bg-title;
+  }
+
+  &-caption {
+    top: @margin-xs;
+    width: 100%;
+    padding-right: @margin-sm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+  }
+
+  &-date {
+    font-size: @text-sm;
+  }
+
+  &-categorie {
+    @h: 30px;
+    height: @h;
+    line-height: @h;
+    padding-left: @margin-sm;
+    padding-right: @margin-df;
+    font-size: @text-sm;
+    display: block;
+    position: relative;
+
+    &::before {
+      @s: pow(pow(@h, 2) / 2, 0.5);
+      top: calc(~"50% - "@s/2);
+      right: -(@s/2);
+      content: '';
+      display: block;
+      width: @s;
+      height: @s;
+      background: inherit;
+      position: absolute;
+      transform: rotate(45deg);
+      border-radius: 0 @radius-df 0 0;
+    }
+  }
+
+  &.light {
+    color: @text-color;
+
+    & > .article-title {
+      background: @bg-title-light;
+    }
   }
 }

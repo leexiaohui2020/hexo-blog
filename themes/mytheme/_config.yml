@@ -1,3 +1,6 @@
 menu:
   home: /
   archives: /archives
+
+color:
+  技术杂谈: '#2196f3'

@@ -4,3 +4,9 @@ bscard:
 nav:
   home: 首页
   archives: 归档
+
+categorie: 文章分类
+categories:
+  技术杂谈: 技术杂谈
+
+tag: 标签列表

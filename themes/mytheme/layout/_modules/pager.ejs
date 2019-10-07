@@ -1,4 +1,6 @@
+<% if (page.prev !== 0 || page.next !== 0) { %>
 <div class="pager">
   <a href="/<%= page.prev_link %>" class="pager-item <%= page.prev === 0 ? 'disabled' : '' %>">上一页</a>
   <a href="/<%= page.next_link %>" class="pager-item <%= page.next === 0 ? 'disabled' : '' %>">下一页</a>
 </div>
+<% } %>

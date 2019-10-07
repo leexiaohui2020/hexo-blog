@@ -1,12 +1,53 @@
+<%
+  const categories = site.categories.find({}).map(item => ({
+    name: item.name,
+    path: item.path,
+    total: item.posts.length
+  }))
+
+  const tags = site.tags.find({}).map(item => ({
+    name: item.name,
+    path: item.path,
+    total: item.posts.length
+  }))
+%>
 <div class="nav-cover">
   <nav class="nav animated fast">
-    <ul class="nav-menu">
-      <% Object.entries(theme.menu).forEach(([key, link]) => { %>
-      <li class="nav-menu-item <%= is_current(link) ? 'active' : '' %>">
-        <a href="<%= link %>"><%= __(`nav.${key}`) %></a>
-      </li>
-      <% }) %>
-    </ul>
+    <div class="nav-wrapper">
+      <ul class="nav-menu">
+        <% Object.entries(theme.menu).forEach(([key, link]) => { %>
+        <li class="nav-menu-item <%= is_current(link) ? 'active' : '' %>">
+          <a href="<%= link %>"><%= __(`nav.${key}`) %></a>
+        </li>
+        <% }) %>
+      </ul>
+
+      <!-- 分类列表 -->
+      <aside class="nav-aside">
+        <div class="nav-aside-title"><%= __('categorie') %></div>
+        <div class="nav-aside-list">
+          <% categories.forEach(item => { %>
+          <a href="<%= item.path %>" class="nav-aside-item <%= page.category === item.name ? 'active' : '' %>">
+            <span><%= item.name %></span>
+            <span><%= item.total %>篇文章</span>
+          </a>
+          <% }) %>
+        </div>
+      </aside>
+
+      <!-- 标签列表 -->
+      <aside class="nav-aside">
+        <div class="nav-aside-title"><%= __('tag') %></div>
+        <div class="nav-aside-list">
+          <% tags.forEach(item => { %>
+          <a href="<%= item.path %>" class="nav-aside-item <%= page.tag === item.name ? 'active' : '' %>">
+            <span><%= item.name %></span>
+            <span><%= item.total %>篇文章</span>
+          </a>
+          <% }) %>
+        </div>
+      </aside>
+    </div>
   </nav>
   <a href="javascript:;" class="nav-close animated fast">
     <i class="icon ion-md-arrow-round-forward"></i>

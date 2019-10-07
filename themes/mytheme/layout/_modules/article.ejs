@@ -1,8 +1,21 @@
 <% posts.data.forEach(item => { %>
 <div class="grid-item padding-xs">
   <a href="<%= item.path %>" style="display: block; width: 100%">
-    <article class="article" style="background-image: url(/<%= item.path + item.image %>)">
-      <div class="article-title"><%= item.title %></div>  
+    <article
+      class="article <%= item.dark ? 'dark' : 'light' %>"
+      style="background-image: url(<%= item.path + item.image %>)"
+    >
+      <div class="article-caption">
+        <div>
+          <% if (item.categories && item.categories.length) { %>
+          <div class="article-categorie"
+            style="background: <%= theme.color[item.categories.data[0].name] %>"
+          ><%= __(`categories.${item.categories.data[0].name}`) %></div>
+          <% } %>
+        </div>
+        <span class="article-date"><%= item.updated.format('YYYY/MM/DD') %></span>
+      </div>
+      <div class="article-title"><%= item.title %></div>
     </article>  
   </a>
 </div>

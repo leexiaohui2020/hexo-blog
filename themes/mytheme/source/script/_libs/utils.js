@@ -25,9 +25,12 @@ export function createBScroll(el) {
     },
     scrollbar: true
   })
+  const onResize = () => {
+    bs.refresh()
+  }
 
-  window.addEventListener('resize', () => bs.refresh())
-  window.addEventListener('orientationchange', () => bs.refresh())
+  window.addEventListener('resize', onResize)
+  window.addEventListener('orientationchange', onResize)
   return bs
 }
 
