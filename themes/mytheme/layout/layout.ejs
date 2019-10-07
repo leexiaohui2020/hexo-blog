@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="<%= config.author %>">
+    <meta name="keywords" content="<%= config.keywords %>">
+    <meta name="description" content="<%= config.description %>">
+    <title><%= config.title %></title>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/animate.css@3.7.2/animate.min.css" rel="stylesheet">
+    <%- css([ 'style/global' ]) %>
+  </head>
+  <body>
+    <div class="app" style="display: none">
+      <aside class="app-sider">
+        <%- partial('_modules/header', {}, { cache: true }) %>
+        <%- partial('_modules/bscard', {}, { cache: true }) %>
+        <%- partial('_modules/menu', {}, { cache: true }) %>
+      </aside>
+      <main class="app-main">
+        <div class="app-scroll" style="height: 100%">
+          <div class="app-scroll-wrapper">
+            <%- body %>
+          </div>
+        </div>
+      </main>
+    </div>
+    <%- js([ 'script/global' ]) %>
+  </body>
+</html>

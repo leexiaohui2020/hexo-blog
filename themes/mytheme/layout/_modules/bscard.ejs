@@ -1,0 +1,10 @@
+
+<aside class="bscard">
+  <% if (is_post()) { %>
+  <div class="bscard-cover" style="background-image: url(/<%= page.path + page.image %>)"></div>
+  <% } else { %>
+  <div class="bscard-cover"></div>
+  <% } %>
+  <div class="bscard-intro"><%= _p('bscard.intro') %></div>
+  <div class="bscard-avatar"></div>
+</aside>

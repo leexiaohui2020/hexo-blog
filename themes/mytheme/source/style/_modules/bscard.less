@@ -1,0 +1,35 @@
+@import '../_libs/vars';
+
+.bscard {
+  position: relative;
+
+  &-cover {
+    padding-top: 65%;
+    background-size: cover;
+    background-image: @image-banner;
+  }
+
+  @intro-h: 30px;
+  @avatar-size: 60px;
+  &-intro {
+    height: @intro-h;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-left: @margin-sm;
+    padding-right: 2 * @margin-sm + @avatar-size;
+    padding-bottom: @margin-xs;
+    font-size: @text-sm;
+  }
+
+  &-avatar {
+    bottom: 0;
+    right: @margin-sm;
+    width: @avatar-size;
+    height: @avatar-size;
+    position: absolute;
+    background-size: cover;
+    background-image: @image-avatar;
+    border-radius: @radius-df;
+  }
+}

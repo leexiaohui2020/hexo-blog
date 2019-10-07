@@ -1,0 +1,25 @@
+.pager {
+  display: flex;
+  justify-content: space-between;
+
+  @w: 120px;
+  @h: 38px;
+  &-item {
+    width: @w;
+    height: @h;
+    line-height: @h;
+    text-align: center;
+    background: @bg-card;
+    cursor: pointer;
+
+    &.disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:not(.disabled):hover {
+      background: @primary-color;
+    }
+  }
+}

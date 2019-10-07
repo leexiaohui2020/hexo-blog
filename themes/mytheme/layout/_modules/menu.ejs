@@ -1,0 +1,14 @@
+<div class="nav-cover">
+  <nav class="nav animated fast">
+    <ul class="nav-menu">
+      <% Object.entries(theme.menu).forEach(([key, link]) => { %>
+      <li class="nav-menu-item <%= is_current(link) ? 'active' : '' %>">
+        <a href="<%= link %>"><%= __(`nav.${key}`) %></a>
+      </li>
+      <% }) %>
+    </ul>
+  </nav>
+  <a href="javascript:;" class="nav-close animated fast">
+    <i class="icon ion-md-arrow-round-forward"></i>
+  </a>
+</div>

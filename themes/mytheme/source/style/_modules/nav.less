@@ -1,0 +1,125 @@
+@import '../_libs/vars';
+
+.nav {
+
+  &-menu {
+    list-style: none;
+    margin: 0 @margin-df;
+    padding: @margin-df 0;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: @text-color-l;
+      font-weight: 600;
+      display: block;
+      line-height: @h;
+    }
+
+    @h: 40px;
+    &-item {
+      height: @h;
+
+      &.active > a {
+        color: @primary-color;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: @border-color;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: @mobile) {
+  @btn-size: 50px;
+  
+  .nav {
+    width: calc(~"100% - "@btn-size - 2 * @margin-lg);
+    height: 100%;
+    overflow: hidden;
+    background: @bg-card;
+
+    &-cover {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background: @bg-cover;
+      z-index: @z-index-df;
+      display: none;
+      &.open {
+        display: block;
+        .nav {
+          animation-name: fadeInLeft;
+        }
+        .nav-close {
+          animation-name: fadeInRight;
+        }
+      }
+
+      &.close > .nav {
+        animation-name: fadeOutLeft;
+      }
+      &.close > .nav-close {
+        animation-name:  fadeOutRight;
+      }
+    }
+
+    &-close {
+      right: @margin-lg;
+      bottom: @margin-lg;
+      width: @btn-size;
+      height: @btn-size;
+      border-radius: 50%;
+      text-align: center;
+      line-height: @btn-size;
+      color: @text-color;
+      background: @color-red;
+      position: absolute;
+      font-size: @text-xl;
+    }
+  }
+}
+
+@media screen and (min-width: @pc) {
+  .nav {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &-cover {
+      flex: 1;
+      margin-top: @margin-sm;
+    }
+
+    &-close {
+      display: none;
+    }
+
+    &-menu {
+      padding: @margin-lg 0;
+      margin: @margin-xl @margin-df 0;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 48px;
+        height: 2px;
+        background: @border-color;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}

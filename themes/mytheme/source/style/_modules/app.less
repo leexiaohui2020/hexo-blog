@@ -1,0 +1,61 @@
+@import '../_libs/vars';
+@import 'bscard';
+@import 'grid';
+@import 'nav';
+@import 'header';
+@import 'pager';
+
+.app {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+
+  &-sider {
+    overflow: hidden;
+  }
+
+  &-main {
+    flex: 1;
+    position: relative;
+  }
+
+  &-scroll {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: @mobile) {
+  .app {
+    flex-direction: column;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: @pc) {
+  .app {
+    flex-direction: row;
+
+    @sider-w: 300px;
+    &-sider {
+      width: @sider-w;
+      background: @bg-card;
+      box-shadow: 1px 0 1px @shadow-color;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .hide-pc {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+<% posts.data.forEach(item => { %>
+<div class="grid-item padding-xs">
+  <a href="<%= item.path %>" style="display: block; width: 100%">
+    <article class="article" style="background-image: url(/<%= item.path + item.image %>)">
+      <div class="article-title"><%= item.title %></div>  
+    </article>  
+  </a>
+</div>
+<% }) %>

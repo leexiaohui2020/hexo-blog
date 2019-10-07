@@ -1,0 +1,24 @@
+@import '../_libs/vars';
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: @mobile) {
+  .grid-item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: @pc) {
+  .grid-item {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: @pclg) {
+  .grid-item {
+    width: 100% / 3;
+  }
+}

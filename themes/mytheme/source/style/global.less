@@ -1,0 +1,36 @@
+@import '_libs/vars';
+@import '_libs/mixs';
+@import '_modules/app';
+@import '_modules/article';
+
+body {
+  margin: 0;
+  font-size: @text-df;
+  color: @text-color;
+  background: @bg-body;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.margin(margin);
+.margin(margin-top);
+.margin(margin-left);
+.margin(margin-right);
+.margin(margin-bottom);
+.margin(margin-tb, margin-top, margin-bottom);
+.margin(margin-lr, margin-left, margin-right);
+
+.margin(padding);
+.margin(padding-top);
+.margin(padding-left);
+.margin(padding-right);
+.margin(padding-bottom);
+.margin(padding-tb, padding-top, padding-bottom);
+.margin(padding-lr, padding-left, padding-right);

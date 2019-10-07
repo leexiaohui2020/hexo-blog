@@ -1,0 +1,32 @@
+@import '../_libs/vars';
+
+@header-h: 50px;
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: @header-h;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: @z-index-df;
+
+  &-action {
+    height: @header-h;
+    display: flex;
+  }
+
+  &-content {
+    flex: 1;
+    height: @header-h;
+  }
+
+  &-btn {
+    width: @header-h;
+    height: @header-h;
+    line-height: @header-h;
+    text-align: center;
+    color: @text-color;
+    font-size: @text-xl;
+  }
+}
