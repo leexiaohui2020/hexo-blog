@@ -27,7 +27,7 @@
         <div class="nav-aside-title"><%= __('categorie') %></div>
         <div class="nav-aside-list">
           <% categories.forEach(item => { %>
-          <a href="<%= item.path %>" class="nav-aside-item <%= page.category === item.name ? 'active' : '' %>">
+          <a href="/<%= item.path %>" class="nav-aside-item <%= page.category === item.name ? 'active' : '' %>">
             <span><%= item.name %></span>
             <span><%= item.total %>篇文章</span>
           </a>
@@ -40,7 +40,7 @@
         <div class="nav-aside-title"><%= __('tag') %></div>
         <div class="nav-aside-list">
           <% tags.forEach(item => { %>
-          <a href="<%= item.path %>" class="nav-aside-item <%= page.tag === item.name ? 'active' : '' %>">
+          <a href="/<%= item.path %>" class="nav-aside-item <%= page.tag === item.name ? 'active' : '' %>">
             <span><%= item.name %></span>
             <span><%= item.total %>篇文章</span>
           </a>

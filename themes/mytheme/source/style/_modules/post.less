@@ -1,0 +1,45 @@
+@import '../_libs/vars';
+
+.post {
+  padding: @margin-sm;
+  border-radius: @radius-df;
+  background: @bg-card;
+
+  &-header {
+    padding-bottom: @margin-sm;
+    border-bottom: 1px solid @border-color;
+  }
+
+  &-title {
+    margin: 0;
+    font-size: @text-xl;
+  }
+
+  &-meta {
+    display: flex;
+    align-items: center;
+    font-size: @text-sm;
+    margin-top: @margin-sm;
+
+    &-item + &-item {
+      margin-left: @margin-sm;
+    }
+
+    &-icon {
+      margin-right: @margin-xs;
+    }
+
+    a.post-meta-label {
+      color: @color-blue;
+    }
+  }
+
+  &-content {
+    padding: @margin-sm 0 0;
+  }
+
+  &-cover {
+    padding: @margin-df;
+    max-width: 1000px;
+  }
+}

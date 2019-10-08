@@ -1,1 +1,25 @@
-Post
+<%
+  const category = page.categories.data[0]
+%>
+
+<div class="post-cover">
+  <article class="post">
+    <div class="post-header">
+      <h1 class="post-title"><%= page.title %></h1>
+      <div class="post-meta">
+        <!-- 分类 -->
+        <div class="post-meta-item">
+          <i class="post-meta-icon icon ion-md-pricetags"></i>
+          <a href="/<%= category.path %>" class="post-meta-label"><%= __(`categories.${category.name}`) %></a>
+        </div>
+        <!-- 时间 -->
+        <div class="post-meta-item">
+          <i class="post-meta-icon icon ion-md-time"></i>
+          <span class="post-meta-label"><%= page.date.format('YYYY-MM-DD HH:mm:ss') %></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-content"><%- page.content %></div>
+  </article>
+</div>

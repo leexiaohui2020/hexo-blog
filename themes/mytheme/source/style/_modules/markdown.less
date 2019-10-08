@@ -1,0 +1,50 @@
+@import '../_libs/vars';
+
+.md-p {
+  margin: 0;
+  text-indent: 2em;
+  line-height: 1.6;
+  text-align: justify;
+
+  &:not(:last-child) {
+    margin-bottom: @margin-sm;
+  }
+}
+
+.md-h2 {
+  margin: 0;
+  margin-bottom: @margin-lg;
+  font-size: @text-lg;
+
+  &:not(:first-child) {
+    margin-top: @margin-lg;
+  }
+}
+
+.md-title-hook {
+  color: @text-color-l;
+  margin-right: @margin-xs;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.md-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 0 2em;
+
+  &-icon {
+    margin-right: @margin-xs;
+  }
+
+  &-item + &-item {
+    margin-top: @margin-xs;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: @margin-sm;
+  }
+}

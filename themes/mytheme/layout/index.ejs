@@ -1,6 +1,8 @@
+<% if (page.posts.length) { %>
 <div class="grid padding-sm">
   <%- partial('_modules/article', { posts: page.posts }) %>
 </div>
 <div class="padding">
   <%- partial('_modules/pager') %>
 </div>
+<% } %>
